@@ -33,8 +33,6 @@ object FormTrabalhadores: TFormTrabalhadores
       VertScrollBar.Visible = False
       Align = alClient
       TabOrder = 0
-      ExplicitLeft = 2
-      ExplicitTop = 2
     end
   end
   object btnAdcTrabalhador: TButton
@@ -124,5 +122,14 @@ object FormTrabalhadores: TFormTrabalhadores
       OnMouseEnter = btn_fecharMouseEnter
       OnMouseLeave = btn_fecharMouseLeave
     end
+  end
+  object btn_encerrartrabalhos: TButton
+    Left = 632
+    Top = 240
+    Width = 137
+    Height = 25
+    Caption = 'Encerrar Trabalhos'
+    TabOrder = 4
+    OnClick = btn_encerrartrabalhosClick
   end
 end

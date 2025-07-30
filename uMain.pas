@@ -20,6 +20,7 @@ type
     cbCargos: TComboBox;
     edNome: TEdit;
     btn_fechar: TPanel;
+    btn_encerrartrabalhos: TButton;
     procedure btnComecarTrabalhosClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -29,6 +30,7 @@ type
     procedure btn_fecharClick(Sender: TObject);
     procedure btn_fecharMouseEnter(Sender: TObject);
     procedure btn_fecharMouseLeave(Sender: TObject);
+    procedure btn_encerrartrabalhosClick(Sender: TObject);
   private
     { Private declarations }
     wListaTrabalhadores:TObjectList<TTrabalhador>;
@@ -84,6 +86,20 @@ begin
     for i:=wListaTrabalhadores.Count-1 downto 0 do begin
       trabalhador:=wListaTrabalhadores[i];
       trabalhador.ExecutarFuncao;
+    end;
+  end else begin
+    ShowMessage('Nenhum trabalhador cadastrado');
+  end;
+end;
+
+procedure TFormTrabalhadores.btn_encerrartrabalhosClick(Sender: TObject);
+var i:Integer;
+    trabalhador: TTrabalhador;
+begin
+  if wListaTrabalhadores.Count>0 then begin
+    for i:=wListaTrabalhadores.Count-1 downto 0 do begin
+      trabalhador:=wListaTrabalhadores[i];
+      trabalhador.EncerrarTrabalho;
     end;
   end else begin
     ShowMessage('Nenhum trabalhador cadastrado');

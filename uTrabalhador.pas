@@ -1,7 +1,7 @@
 unit uTrabalhador;
 
 interface
-
+  uses FMX.Dialogs;
   Type TTrabalhador = class(TObject)
   protected
     Trabalhando:Boolean;
@@ -19,6 +19,7 @@ interface
     procedure setCargo(aCargo:String);
     constructor Create(aNome:String);
     procedure ExecutarFuncao; virtual;
+    procedure EncerrarTrabalho;
   end;
 
 implementation
@@ -33,6 +34,12 @@ end;
 procedure TTrabalhador.EncerrarExpediente;
 begin
   Self.Trabalhando:=False;
+end;
+
+procedure TTrabalhador.EncerrarTrabalho;
+begin
+  self.Trabalhando:= False;
+  ShowMessage('');
 end;
 
 procedure TTrabalhador.ExecutarFuncao;
